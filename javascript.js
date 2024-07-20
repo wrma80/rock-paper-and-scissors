@@ -1,46 +1,47 @@
-function definirEscolha() {
-    return parseInt(Math.random() * 3);
+function getComputerChoice() {
+    var randomNumber = parseInt(Math.random() * 3);
+    var list = ["rock", "paper", "scissors"];
+    return list[randomNumber];
 }
 
-function opcaoEscolhida(opcao) {
+function getHumanChoice(option) {
     var mensagem = "";
-    switch (opcao) {
+    switch (option) {
         case 0:
-            mensagem = "pedra";
+            mensagem = "rock";
             break;
         case 1:
-            mensagem = "papel";
+            mensagem = "paper";
             break;
         case 2:
-            mensagem = "tesoura";
+            mensagem = "scissors";
             break;
     } 
     return mensagem;
 }
 
-var usuario = "Usuario";
-var opcaoUsuario = Number(prompt("Digite [0] para pedra, [1] para papel ou [2] para tesoura:"));
-var escolhaUsuario = opcaoEscolhida(opcaoUsuario);
-var opcaoComputador = definirEscolha();
-var escolhaComputador = opcaoEscolhida(opcaoComputador);
+var user = "user";
+var userOption = Number(prompt("Type [0] for rock, [1] for paper or [2] for scissorr:"));
+var userChoice = getHumanChoice(userOption);
+var computerChoice = getComputerChoice();
 
 
-if (escolhaUsuario == "pedra" && escolhaComputador == "pedra") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\nDeu empate!!!`);
-} else if (escolhaUsuario == "pedra" && escolhaComputador == "tesoura") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\nO ${usuario} ganhou!`);
-} else if (escolhaUsuario == "pedra" && escolhaComputador == "papel") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\n O computador ganhou!`);
-} else if (escolhaUsuario == "papel" && escolhaComputador == "papel") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\nDeu empate!!!`);
-} else if (escolhaUsuario == "papel" && escolhaComputador == "pedra") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\nO ${usuario} ganhou!!!`);
-} else if (escolhaUsuario == "papel" && escolhaComputador == "tesoura") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\nO computador ganhou!!!`);
-} else if (escolhaUsuario == "tesoura" && escolhaComputador == "tesoura") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\nDeu empate!!!`);
-} else if (escolhaUsuario == "tesoura" && escolhaComputador == "pedra") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\nO computador ganhou!!!`);
-} else if (escolhaUsuario == "tesoura" && escolhaComputador == "papel") {
-    console.log(`${usuario} escolheu ${escolhaUsuario}.\nO computador escolheu ${escolhaComputador}.\nO ${usuario} ganhou!!!`);
+if (userChoice == "rock" && computerChoice == "rock") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\nDeu empate!!!`);
+} else if (userChoice == "rock" && computerChoice == "scissors") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\nO ${user} ganhou!`);
+} else if (userChoice == "rock" && computerChoice == "paper") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\n O computador ganhou!`);
+} else if (userChoice == "paper" && computerChoice == "paper") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\nDeu empate!!!`);
+} else if (userChoice == "paper" && computerChoice == "rock") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\nO ${user} ganhou!!!`);
+} else if (userChoice == "paper" && computerChoice == "scissors") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\nO computador ganhou!!!`);
+} else if (userChoice == "scissors" && computerChoice == "scissors") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\nDeu empate!!!`);
+} else if (userChoice == "scissors" && computerChoice == "rock") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\nO computador ganhou!!!`);
+} else if (userChoice == "scissors" && computerChoice == "paper") {
+    console.log(`${user} escolheu ${userChoice}.\nO computador escolheu ${computerChoice}.\nO ${user} ganhou!!!`);
 }
