@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: dimgray;
+    color: whitesmoke;
+}
+
+.header, .footer {
+    flex-grow: 1;
+}
+
+.header p, .header h1 {
+    margin: auto;
+    text-align: center;
+    width: 700px;
+}
+
+.main {
+    flex-grow: 2;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    height: 400px;
+    justify-content: center;
+}
+
+.container > button {
+    height: 100px;
+    width: 100px;
+}
+
+button:hover {
+    background-color: rgb(53, 190, 232);
+    color: white;
+}
+
+.escolha, .resultado {
+    height: 30px;
+}
+
+.footer {
+    background-color: dimgray;
+    color: whitesmoke;
+}
